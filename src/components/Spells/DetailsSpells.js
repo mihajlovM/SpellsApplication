@@ -9,7 +9,7 @@ class DetailsSpells extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = { SpellsId: -1 }
+        this.state = { index : '' ,attack_type: '',  }
     }
 
 
@@ -23,7 +23,7 @@ class DetailsSpells extends React.Component {
         .then(res => {
             // handle success
             console.log(res);
-            this.setState({spells: res.data});
+            this.setState({index: res.data.index, attack_type:res.data.attack_type});
         })
         .catch(error => {
             // handle error
@@ -32,33 +32,17 @@ class DetailsSpells extends React.Component {
          });
     }
 
-    renderSpells() {
-        return this.state.spells.map((spells, index) => {
-            return (
-               <tr key={spells.index}>
-                  <td>{spells.attack_type}</td>
-               </tr>
-            )
-         })
-    }
 
     render() {
         return (
             <div>
-                <h1>Edit movie</h1>
-                <Table style={{marginTop:5}}>
-                        <thead>
-                            <tr>
-                                <th>index</th>
-                                <th>attack_type</th>
-                               
-                            </tr>
-                        </thead>
-                        <tbody>
-                        {this.renderSpells()}
-                        </tbody>         
-                    </Table>
-
+                <h1>Details Spells</h1>
+                <form>
+                    <label htmlFor="index">index</label>
+                    <input id="index" type="text" value={this.state.index} /><br/>
+                    <label htmlFor="attack_type">Attack type</label>
+                    <input id="duration" type="text" value={this.state.attack_type} onChange={(e) => this.onDurationChange(e)}/> 
+                </form>
             </div>
         );
     }
