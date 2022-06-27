@@ -1,15 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {
-  Route,
-  HashRouter as Router,
-  Routes
-} from "react-router-dom";
+import { Route, Link, HashRouter as Router, Routes } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap"
 import './index.css';
-import Home from './components/Home';
+
 import Spells from './components/Spells/Spells';
-import DetailsSpells from './components/Spells/DetailsSpells';
+import SpellsDetails from './components/Spells/SpellsDetails';
 
 class App extends React.Component {
   render() {
@@ -17,11 +13,12 @@ class App extends React.Component {
       <div>
         <Router>
           <Navbar expand bg="dark" variant="dark">
+            
           </Navbar>
           <Container >
             <Routes>
               <Route path="/" element={<Spells/>} />
-              <Route path="/spells/:index" element={<DetailsSpells/>} />
+              <Route path="/spells/:index" element={<SpellsDetails/>} />
             </Routes>
           </Container>
         </Router>
