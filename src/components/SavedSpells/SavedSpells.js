@@ -5,34 +5,34 @@ import TaskAxios from "../../apis/TaskAxios";
 
 function SavedSpells() {
   const [fav, setFav] = useState([]);
-  const { index } = useParams();
 
   //save into favorites
 
-  useEffect(() => {
-    const fav = getFromFavorites();
+  // useEffect(() => {
+  //   const fav = getFromFavorites();
 
-    var index1 = fav.indexOf(index);
+  //   var index1 = fav.indexOf(index);
 
-    if (index1 === -1) {
-      fav.push(index);
-    }
+  //   if (index1 === -1) {
+  //     fav.push(index);
+  //   }
 
-    localStorage.setItem("fav", JSON.stringify(fav));
-  }, [index]);
+  //   localStorage.setItem("fav", JSON.stringify(fav));
+  // }, [index]);
 
   useEffect(() => {
     const savedSpells = JSON.parse(localStorage.getItem("fav"));
-    // console.log(savedSpells);
 
-    if (savedSpells.length) {
-      const promise1 = TaskAxios.get("/spells/");
-      const promise2 = savedSpells;
+    let niz = [];
+    savedSpells.forEach((element) => {
+      console.log(element);
+      const promise1 = TaskAxios.get("/spells/" + element);
+      niz.push(promise1);
+    });
 
-      Promise.all([promise1, promise2]).then((response) => {
-        console.log(response);
-      });
-    }
+    Promise.all(niz).then((response) => {
+      console.log(response);
+    });
   }, []);
 
   function getFromFavorites() {

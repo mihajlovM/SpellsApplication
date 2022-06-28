@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import TaskAxios from "../../apis/TaskAxios";
 import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 
 function Spells(props) {
   const [spells, setSpells] = useState([]);
@@ -14,6 +15,24 @@ function Spells(props) {
   }, []);
 
   function renderSpells() {
+    // document.getElementById("myBtn").addEventListener("click", myFunction);
+
+    function myFunction(index) {
+      let fav = getFromFavorites();
+      console.log(index);
+      fav.push(index);
+      localStorage.setItem("fav", JSON.stringify(fav));
+    }
+
+    function getFromFavorites() {
+      let fav;
+      if (localStorage.getItem("fav") === null) {
+        fav = [];
+      } else {
+        fav = JSON.parse(localStorage.getItem("fav"));
+      }
+      return fav;
+    }
     return spells.map((spells, index) => {
       return (
         <tr key={spells.index}>
@@ -28,6 +47,9 @@ function Spells(props) {
           </td>
           <td>
             <Link to={`spells/saved/${spells.index}`}> favourites</Link>
+          </td>
+          <td>
+            <button onClick={() => myFunction(spells.index)}>Try it</button>
           </td>
         </tr>
       );
