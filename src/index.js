@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Route, Link, HashRouter as Router, Routes } from "react-router-dom";
-import { Navbar, Nav, Container } from "react-bootstrap"
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Navbar, Container } from "react-bootstrap"
 import './index.css';
 
+ 
+import SavedSpells from './components/SavedSpells/SavedSpells.js';
 import Spells from './components/Spells/Spells';
-import SpellsDetails from './components/Spells/SpellsDetails';
+import SpellsDetails from './components/SpellsDetails/SpellsDetails';
 
 class App extends React.Component {
   render() {
@@ -19,6 +21,7 @@ class App extends React.Component {
             <Routes>
               <Route path="/" element={<Spells/>} />
               <Route path="/spells/:index" element={<SpellsDetails/>} />
+              <Route path="/spells/saved/:index" element={<SavedSpells/>} />
             </Routes>
           </Container>
         </Router>

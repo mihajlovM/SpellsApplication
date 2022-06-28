@@ -1,26 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { Table } from 'react-bootstrap'
-import TaskAxios from "../../apis/TaskAxios"
-import { Link } from "react-router-dom";
+import { Table, Button } from 'react-bootstrap'
+import TaskAxios from "../apis/TaskAxios"
+ 
 
 
 function Spells(props) {
   const [spells, setSpells] = useState([]);
 
-  useEffect(() => {
 
-//pretter podesiti
+
+  useEffect(() => {
+    if(spells !== []){
       TaskAxios.get("/spells").then((response) => {
         setSpells(response.data.results)
       });
-    
-   }, []);
-
-
-
-
-
-
+    } 
+  });
+ 
   function renderSpells() {
     return spells.map((spells, index) => {
         return (
@@ -28,21 +24,11 @@ function Spells(props) {
               <td>{spells.index}</td>
               <td>{spells.name}</td>
               <td>{spells.url}</td>
-              <td>
-                {/* <Button variant="warning" onClick={() => goToDetails(spells.index)}>
-                  details
-                  </Button> */}
-                  <Link to={`spells/${spells.index}`}> details</Link>
-                  </td>
-                  <td><Link to={`spells/saved/${spells.index}`}> favourites</Link></td>
-        
+              <td><Button variant="warning" onClick={() => this.goToDetails(spells.index)}>details</Button></td>
            </tr>
         )
      })
 }
-
-
-
 
 if (spells !== []){
   return (
@@ -65,5 +51,10 @@ if (spells !== []){
 
   )
 }
+  
+
+
+
+
 } 
 export default Spells;
