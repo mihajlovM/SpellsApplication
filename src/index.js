@@ -5,8 +5,9 @@ import { Navbar, Container } from "react-bootstrap";
 import "./index.css";
 
 import SavedSpells from "./components/SavedSpells/SavedSpells.js";
-import Spells from "./components/Spells/Spells";
-import SpellsDetails from "./components/SpellsDetails/SpellsDetails";
+import SpellsContainer from "../src/components/Spells/SpellsConainter";
+import SpellsDetailsContainer from "./components/SpellsDetails/SpellsDetailsContainer";
+import SavedSpellsContainer from "./components/SavedSpells/SavedSpellsContainer";
 
 class App extends React.Component {
   render() {
@@ -16,9 +17,15 @@ class App extends React.Component {
           <Navbar expand bg="dark" variant="dark"></Navbar>
           <Container>
             <Routes>
-              <Route path="/" element={<Spells />} />
-              <Route path="/spells/:index" element={<SpellsDetails />} />
-              <Route path="/saved-spells" element={<SavedSpells />} />
+              <Route path="/" element={<SpellsContainer />} />
+              <Route
+                path="/spells/:index"
+                element={<SpellsDetailsContainer />}
+              />
+              <Route
+                path="/saved-spells/:index"
+                element={<SavedSpellsContainer />}
+              />
             </Routes>
           </Container>
         </Router>
