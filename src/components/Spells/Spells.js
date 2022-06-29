@@ -18,6 +18,7 @@ const Spells = ({ spells }) => {
     <div>
       <h1>Spells</h1>
 
+      {/* <Card name="Name" index="1" isSaved={getFromFavorites().includes(item.index)}> */}
       <Table style={{ marginTop: 5 }}>
         <thead>
           <tr>

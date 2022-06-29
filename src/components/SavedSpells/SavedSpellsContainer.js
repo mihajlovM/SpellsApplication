@@ -1,26 +1,25 @@
 import { useEffect, useState } from "react";
-import Spells from "../Spells/Spells";
 import TaskAxios from "../../apis/TaskAxios";
 import SavedSpells from "./SavedSpells";
+import { getFromFavorites } from "../../utils/storage";
 
-function SavedSpellsContainer(props) {
-  const [fav, setFav] = useState([]);
+function SavedSpellsContainer() {
   const [spells, setSpells] = useState([]);
 
   useEffect(() => {
-    const savedSpells = JSON.parse(localStorage.getItem("fav"));
+    const savedSpells = getFromFavorites();
 
-    let niz = [];
+    const arr = [];
     savedSpells.forEach((element) => {
-      // console.log(element);
       const promise1 = TaskAxios.get("/spells/" + element);
-      niz.push(promise1);
+      arr.push(promise1);
     });
 
     //nije pouzdan endpoint i zato je koriscen promis.all (paralelizacija requestova)
-    Promise.all(niz).then((response) => {
-      //setSpells(response.data);
-      console.log(response.data);
+    //$
+    Promise.all(arr).then((response) => {
+      const mapSpells = (spellPayload) => spellPayload.data;
+      setSpells(response.map(mapSpells));
     });
   }, []);
 
