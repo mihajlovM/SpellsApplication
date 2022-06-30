@@ -10,6 +10,12 @@ import "./App.css";
  * - Do not use var, use const instead
  * - Axios service should be lowercased
  * - Remove AllCards since it is not used
+ * - Remove comments
+ * - Every page should follow the same structure (e.g. loading state)
+ * - Improve styles on Spells page (e.g. create a dedicated card component)
+ * - Spell detail should have a button that toggles the spell to be a favourite
+ * - Saved Spells should have a comment that explains why Promise.all was used (and why you think it is a hack)
+ * - Improve Card styles (look for inspiration online)
  */
 function App() {
   return (

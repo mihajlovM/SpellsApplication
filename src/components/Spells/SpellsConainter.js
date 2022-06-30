@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import Spells from "../Spells/Spells";
-import TaskAxios from "../../apis/TaskAxios";
+import taskAxios from "../../apis/taskAxios";
 
 function SpellsContainer(props) {
   const [spells, setSpells] = useState([]);
 
   useEffect(() => {
-    TaskAxios.get("/spells").then((response) => {
+    taskAxios.get("/spells").then((response) => {
       setSpells(response.data.results);
     });
   }, []);

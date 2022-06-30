@@ -39,18 +39,6 @@ const Card = ({
         <p>{description}</p>
       </main>
       <footer>{children}</footer>
-
-      {/* <p>{index}</p> */}
-
-      {/* <Box>
-        {" "}
-        <div>
-          <img className="photo" src={Logo} alt="aa" />
-        </div>
-        <p>description....</p>
-      </Box> */}
-
-      {/* <button onClick={onToggle}>{isSaved ? "✔" : "×"}</button> */}
     </article>
   );
 };

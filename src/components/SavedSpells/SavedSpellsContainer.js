@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import TaskAxios from "../../apis/TaskAxios";
+
 import SavedSpells from "./SavedSpells";
 import { getFromFavorites } from "../../utils/storage";
+import taskAxios from "../../apis/taskAxios";
 
 function SavedSpellsContainer() {
   const [spells, setSpells] = useState([]);
@@ -11,7 +12,7 @@ function SavedSpellsContainer() {
 
     const arr = [];
     savedSpells.forEach((element) => {
-      const promise1 = TaskAxios.get(`/spells/${element}`);
+      const promise1 = taskAxios.get(`/spells/${element}`);
       arr.push(promise1);
     });
 
