@@ -1,5 +1,3 @@
-import { Table } from "react-bootstrap";
-
 // attack_type: "ranged"
 // casting_time: "1 action"
 // classes: [{…}]
@@ -22,6 +20,7 @@ import { Table } from "react-bootstrap";
 
 // import { Card } from "../Card/Card";
 import Card from "../Card/Card";
+import "../../App.css";
 
 const SavedSpells = ({ spells }) => {
   return (

@@ -1,6 +1,6 @@
 import "./Card.css";
 
-const Card = ({
+const AllCards = ({
   index,
   isSaved,
   name,
@@ -16,28 +16,6 @@ const Card = ({
       <header>
         <h3>{name}</h3>
       </header>
-      <main>
-        <ul>
-          <li>
-            <h4>Casting Time</h4>
-            <span>{castingTime}</span>
-          </li>
-
-          <li>
-            <h4>Range</h4>
-            <span>{range}</span>
-          </li>
-          <li>
-            <h4>Components</h4>
-            <span>{components}</span>
-          </li>
-          <li>
-            <h4>Duration</h4>
-            <span>{duration}</span>
-          </li>
-        </ul>
-        <p>{description}</p>
-      </main>
       <footer>{children}</footer>
 
       {/* <p>{index}</p> */}
@@ -55,4 +33,4 @@ const Card = ({
   );
 };
 
-export default Card;
+export default AllCards;

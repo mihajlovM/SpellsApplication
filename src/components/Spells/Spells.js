@@ -1,10 +1,7 @@
-import { Table } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import {
-  getFromFavorites,
-  setToFavorites,
-  deleteFromFavorites,
-} from "../../utils/storage";
+
+import "../../App.css";
 
 const Spells = ({ spells }) => {
   ///mora da se deklarise pre nego sto se pozove(arrow funkc)
@@ -23,9 +20,17 @@ const Spells = ({ spells }) => {
           </li>
         </ul>
       </nav>
-
+      <div className="card-list-wrapper">
+        {spells.map((spell) => (
+          <article className="card-wapper">
+            <Button>
+              <Link to={`/spells/${spell.index}`}> {spell.name}</Link>
+            </Button>
+          </article>
+        ))}
+      </div>
       {/* <Card name="Name" index="1" isSaved={getFromFavorites().includes(item.index)}> */}
-      <Table style={{ marginTop: 5 }}>
+      {/* <Table style={{ marginTop: 5 }}>
         <thead>
           <tr>
             <th>index</th>
@@ -48,7 +53,7 @@ const Spells = ({ spells }) => {
             </tr>
           ))}
         </tbody>
-      </Table>
+      </Table> */}
     </div>
   );
 };

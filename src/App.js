@@ -1,6 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
+/**
+ * TODO @markom
+ * - Remove unused imports
+ * - Use english for variables/functions/classNames
+ * - Remove non-assignment related content
+ * - Each utility should have a comment explaining its purpose (like getFromFavorites)
+ * - Do not use var, use const instead
+ * - Axios service should be lowercased
+ * - Remove AllCards since it is not used
+ */
 function App() {
   return (
     <div className="App">
