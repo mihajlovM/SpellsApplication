@@ -1,0 +1,17 @@
+.card-wrapper {
+  max-width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 990px) {
+  .card-wrapper {
+    width: calc(33.333% - 15px);
+  } 
+}
+
+/* TODO: 2 cards from 768px */
+
+/* TODO: 1 card bellow 768px */

@@ -3,18 +3,16 @@ export const getFromFavorites = () => {
   return keys ? JSON.parse(keys) : [];
 };
 
+// TODO: Only unique items should go here
 export function setToFavorites(index) {
   let fav = getFromFavorites();
-  console.log(index);
-  fav.push(index);
-  localStorage.setItem("fav", JSON.stringify(fav));
+  console.log(fav, index);
+  if (!fav.includes(index)) {
+    fav.push(index);
+    localStorage.setItem("fav", JSON.stringify(fav));
+  }
 }
 
-// [1, 2, 3] 1
-// 1 !== 1
-// 2 !== 1
-// 3 !== 1
-// [2, 3]
 const filterOutSpell = (spellIndexes, index) =>
   spellIndexes.filter((spellIndex) => spellIndex !== index);
 

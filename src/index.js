@@ -4,6 +4,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { Navbar, Container } from "react-bootstrap";
 import "./index.css";
 
+import Card from "./components/Card/Card";
 import SavedSpells from "./components/SavedSpells/SavedSpells.js";
 import SpellsContainer from "../src/components/Spells/SpellsConainter";
 import SpellsDetailsContainer from "./components/SpellsDetails/SpellsDetailsContainer";
@@ -22,10 +23,8 @@ class App extends React.Component {
                 path="/spells/:index"
                 element={<SpellsDetailsContainer />}
               />
-              <Route
-                path="/saved-spells/:index"
-                element={<SavedSpellsContainer />}
-              />
+              <Route path="/saved-spells" element={<SavedSpellsContainer />} />
+              <Route path="/card/" element={<Card />} />
             </Routes>
           </Container>
         </Router>

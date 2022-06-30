@@ -11,12 +11,11 @@ function SavedSpellsContainer() {
 
     const arr = [];
     savedSpells.forEach((element) => {
-      const promise1 = TaskAxios.get("/spells/" + element);
+      const promise1 = TaskAxios.get(`/spells/${element}`);
       arr.push(promise1);
     });
 
     //nije pouzdan endpoint i zato je koriscen promis.all (paralelizacija requestova)
-    //$
     Promise.all(arr).then((response) => {
       const mapSpells = (spellPayload) => spellPayload.data;
       setSpells(response.map(mapSpells));

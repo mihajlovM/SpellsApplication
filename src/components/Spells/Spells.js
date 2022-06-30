@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import {
@@ -17,6 +16,13 @@ const Spells = ({ spells }) => {
   return (
     <div>
       <h1>Spells</h1>
+      <nav>
+        <ul>
+          <li>
+            <Link to={`/saved-spells`}>favourites</Link>
+          </li>
+        </ul>
+      </nav>
 
       {/* <Card name="Name" index="1" isSaved={getFromFavorites().includes(item.index)}> */}
       <Table style={{ marginTop: 5 }}>
@@ -38,19 +44,6 @@ const Spells = ({ spells }) => {
               <td>{item.url}</td>
               <td>
                 <Link to={`/spells/${item.index}`}> details</Link>
-              </td>
-              <td>
-                <Link to={`/saved-spells/${item.index}`}>favourites</Link>
-              </td>
-              <td>
-                <button onClick={() => setToFavorites(item.index)}>
-                  SET TO FAVORITES
-                </button>
-              </td>
-              <td>
-                <button onClick={() => deleteFromFavorites(item.index)}>
-                  DELETE FROM FAVORITES
-                </button>
               </td>
             </tr>
           ))}
