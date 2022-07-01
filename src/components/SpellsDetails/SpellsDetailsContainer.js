@@ -16,6 +16,7 @@ function SpellsDetailsContainer(props) {
         console.log(response.data);
       });
   }, [spell, index]);
+
   return <SpellsDetails spell={spell} />;
 }
 export default SpellsDetailsContainer;

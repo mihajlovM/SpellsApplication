@@ -1,17 +1,48 @@
-.card-wrapper {
+.card {
+  background: #f0f0f0;
+  border-radius: 10px;
+  border: 10px solid #cacaca;
   max-width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-  margin-bottom: 15px;
 }
 
-@media screen and (min-width: 990px) {
-  .card-wrapper {
-    width: calc(33.333% - 15px);
-  } 
+
+
+.card a:hover {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  display: block;
 }
 
-/* TODO: 2 cards from 768px */
+.card-header {
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
 
-/* TODO: 1 card bellow 768px */
+.card-title {
+  margin: 0;
+}
+
+.spell-details-list {
+  border-top: 10px solid #fff;
+  border-bottom: 10px solid #fff;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;;
+  margin: 0;
+  padding: 0;
+}
+
+.spell-details-list-item {
+  padding: 5px 10px;
+  width: 50%;
+}
+
+.spell-details-list-item-title {
+  margin: 0;
+}
+
+.spell-description {
+  padding: 5px 10px;
+}
+

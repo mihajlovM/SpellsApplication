@@ -1,0 +1,21 @@
+
+.page-wrapper {
+  padding: 15px;
+}
+
+.page-content {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.page-header button {
+  margin-left: 15px;
+}
+
+

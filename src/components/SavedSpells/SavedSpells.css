@@ -1,0 +1,36 @@
+.page-wrapper {
+  padding: 15px;
+}
+
+.page-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.link {
+  text-decoration: none;
+  color: #000;
+}
+
+.card-list-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card-list-wrapper .link {
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .card-list-wrapper .link {
+    width: calc(50% - 15px);
+  } 
+}
+
+@media screen and (min-width: 990px) {
+  .card-list-wrapper .link {
+    width: calc(33.333% - (2 * 30px) / 3);
+  } 
+}

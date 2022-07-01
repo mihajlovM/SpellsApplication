@@ -1,6 +1,4 @@
-import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
 import "../../App.css";
 
 const Spells = ({ spells }) => {
@@ -10,23 +8,13 @@ const Spells = ({ spells }) => {
 
   return (
     <div>
-      <h1>Spells</h1>
-      <nav>
-        <ul>
-          <li>
-            <Link to={`/saved-spells`}>favourites</Link>
-          </li>
-        </ul>
-      </nav>
-      <div className="card-list-wrapper">
+      <ul>
         {spells.map((spell) => (
-          <article className="card-wapper">
-            <Button>
-              <Link to={`/spells/${spell.index}`}> {spell.name}</Link>
-            </Button>
-          </article>
+          <li key={spell.index}>
+            <Link to={`/spells/${spell.index}`}> {spell.name}</Link>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };
