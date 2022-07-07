@@ -14,15 +14,15 @@ const SpellsDetails = ({ spell }) => {
   const [isSaved, setIsSaved] = useState(null);
 
   useEffect(() => {
-    setIsSaved(getFromFavorites().includes(spell?.index));
+    setIsSaved(getFromFavorites("fav").includes(spell?.index));
   }, [spell, setIsSaved]);
 
   const handleFavorites = () => {
     if (isSaved) {
-      deleteFromFavorites(spell.index);
+      deleteFromFavorites(spell.index, "fav");
       setIsSaved(false);
     } else {
-      setToFavorites(spell.index);
+      setToFavorites(spell.index, "fav");
       setIsSaved(true);
     }
   };

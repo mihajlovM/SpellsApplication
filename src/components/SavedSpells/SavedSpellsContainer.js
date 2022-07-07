@@ -8,11 +8,8 @@ function SavedSpellsContainer() {
   const [spells, setSpells] = useState(null);
 
   useEffect(() => {
-    const savedSpells = getFromFavorites();
-
-    console.log("======================");
-    console.log(savedSpells);
-    console.log("======================");
+    const savedSpells = getFromFavorites("fav");
+ 
 
     const arr = [];
     savedSpells.forEach((element) => {

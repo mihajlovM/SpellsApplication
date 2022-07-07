@@ -1,29 +1,31 @@
 /**
  * Retrieve favourite spells from localstorage
  */
-export const getFromFavorites = () => {
-  const keys = localStorage.getItem("fav");
+export const getFromFavorites = (itemName) => {
+  const keys = localStorage.getItem(itemName);
   return keys ? JSON.parse(keys) : [];
 };
 
 /**
  *  Set spells to a list of favorite spells and put it in local storage.
  */
-export function setToFavorites(index) {
-  let fav = getFromFavorites();
+export function setToFavorites(index, itemName) {
+  console.log(index);
+  let fav = getFromFavorites(itemName);
   console.log(fav, index);
   if (!fav.includes(index)) {
     fav.push(index);
-    localStorage.setItem("fav", JSON.stringify(fav));
+    localStorage.setItem(itemName, JSON.stringify(fav));
   }
+
 }
 
 /**
  *  Set spells to a list of favorite spells and put it in local storage.
  */
-export function deleteFromFavorites(index) {
+export function deleteFromFavorites(index,itemName) {
   const filterOutSpell = (spellIndexes, index) =>
     spellIndexes.filter((spellIndex) => spellIndex !== index);
-  const items = JSON.parse(localStorage.getItem("fav")) || [];
-  localStorage.setItem("fav", JSON.stringify(filterOutSpell(items, index)));
+  const items = JSON.parse(localStorage.getItem(itemName)) || [];
+  localStorage.setItem(itemName, JSON.stringify(filterOutSpell(items, index)));
 }
