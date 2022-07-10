@@ -8,7 +8,7 @@ const Spells = ({ spells }) => {
 
   return (
     <div>
-      <ul>
+      <ul class="list">
         {spells.map((spell) => (
           <li key={spell.index}>
             <Link to={`/spells/${spell.index}`}> {spell.name}</Link>

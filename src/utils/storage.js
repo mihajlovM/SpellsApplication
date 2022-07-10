@@ -10,9 +10,9 @@ export const getFromFavorites = (itemName) => {
  *  Set spells to a list of favorite spells and put it in local storage.
  */
 export function setToFavorites(index, itemName) {
-  console.log(index);
+ 
   let fav = getFromFavorites(itemName);
-  console.log(fav, index);
+ 
   if (!fav.includes(index)) {
     fav.push(index);
     localStorage.setItem(itemName, JSON.stringify(fav));
