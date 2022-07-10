@@ -1,7 +1,7 @@
  
 import axios from "axios";
 
-import { BASE_URL, fetchSpells } from "./unsplash";
+import { BASE_URL, fetchSpells } from "./testAxios";
 
 jest.mock("axios");
 
