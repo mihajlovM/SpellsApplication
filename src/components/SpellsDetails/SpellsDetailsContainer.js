@@ -1,19 +1,18 @@
 import { useEffect, useState } from "react";
-import taskAxios from "../../apis/taskAxios";
 import { useParams } from "react-router-dom";
 import SpellsDetails from "./SpellsDetails";
+import axios from "axios";
+import { BASE_URL } from "../../url/baseUrl";
 
 export function SpellsDetailsContainer() {
   const [spell, setSpell] = useState(null);
 
   const { index } = useParams();
    
-
   useEffect(() => {
     if (!spell && index)
-      taskAxios.get("/spells/" + index).then((response) => {
+       axios.get(`${BASE_URL}/spells/` + index).then((response) => {
         setSpell(response.data);
-       
       });
   }, [spell, index]);
 

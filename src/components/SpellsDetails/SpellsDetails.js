@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import {
+  import {
   setToFavorites,
   deleteFromFavorites,
   getFromFavorites,
@@ -7,8 +6,7 @@ import {
 import "../../App.css";
 import "./SpellsDetails.css";
 import Card from "../Card/Card";
-import { Switch } from "theme-ui";
-import { useState, useEffect } from "react";
+ import { useState, useEffect } from "react";
 
 const SpellsDetails = ({ spell }) => {
   const [isSaved, setIsSaved] = useState(null);

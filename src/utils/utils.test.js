@@ -5,10 +5,8 @@ const {
 } = require("./storage.js");
 
 beforeEach(() => {
- 
-    //cleare test
-    
-  });
+  //cleare test
+});
 
 test("should be empty localstorage test", () => {
   const keys = getFromFavorites("test");
@@ -17,7 +15,7 @@ test("should be empty localstorage test", () => {
 
 test("deleted", () => {
   setToFavorites("animate-objects", "test");
-  deleteFromFavorites("animate-objects","test");
+  deleteFromFavorites("animate-objects", "test");
   const results = getFromFavorites("test");
   expect(results).toEqual([]);
 });
@@ -27,4 +25,3 @@ test("should be one saved in localstorage test", () => {
   const results = getFromFavorites("test");
   expect(results).toEqual(["animate-objects"]);
 });
-

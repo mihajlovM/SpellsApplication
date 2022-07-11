@@ -10,20 +10,18 @@ export const getFromFavorites = (itemName) => {
  *  Set spells to a list of favorite spells and put it in local storage.
  */
 export function setToFavorites(index, itemName) {
- 
   let fav = getFromFavorites(itemName);
- 
+
   if (!fav.includes(index)) {
     fav.push(index);
     localStorage.setItem(itemName, JSON.stringify(fav));
   }
-
 }
 
 /**
  *  Set spells to a list of favorite spells and put it in local storage.
  */
-export function deleteFromFavorites(index,itemName) {
+export function deleteFromFavorites(index, itemName) {
   const filterOutSpell = (spellIndexes, index) =>
     spellIndexes.filter((spellIndex) => spellIndex !== index);
   const items = JSON.parse(localStorage.getItem(itemName)) || [];

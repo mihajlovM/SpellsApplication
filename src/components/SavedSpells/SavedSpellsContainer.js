@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
+import { BASE_URL } from "../../url/baseUrl";
+import axios from "axios";
 
 import SavedSpells from "./SavedSpells";
 import { getFromFavorites } from "../../utils/storage";
-import taskAxios from "../../apis/taskAxios";
 
 function SavedSpellsContainer() {
   const [spells, setSpells] = useState(null);
 
   useEffect(() => {
     const savedSpells = getFromFavorites("fav");
- 
 
     const arr = [];
     savedSpells.forEach((element) => {
-      arr.push(taskAxios.get(`/spells/${element}`));
+      arr.push(axios.get(`${BASE_URL}/spells/${element}`));
     });
 
     /**
