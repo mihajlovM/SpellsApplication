@@ -9,10 +9,11 @@
     "@mui/material": "^5.8.6",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/user-event": "^13.5.0",
+    "@zarconontol/enzyme-adapter-react-18": "^0.7.3",
     "axios": "^0.27.2",
     "bootstrap": "^5.1.3",
     "classnames": "^2.3.1",
-    "enzyme-adapter-react-16": "^1.15.6",
+    "enzyme-to-json": "^3.6.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.4.0",
     "react-bootstrap-validation": "^0.1.11",
@@ -20,8 +21,7 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "theme-ui": "^0.14.6",
-    "web-vitals": "^2.1.4",
-    "enzyme-to-json": "^3.6.1"
+    "web-vitals": "^2.1.4"
   },
   "editor.formatOnSave": true,
   "[javascript]": {
@@ -54,15 +54,18 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/dom": "^8.14.0",
     "@testing-library/react": "^13.3.0",
     "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
     "eslint": "^8.19.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.1.0",
     "jest": "^28.1.2",
+    "jest-dom": "^4.0.0",
+    "jest-environment-jsdom": "^28.1.2",
     "jest-mock-axios": "^4.6.1",
     "prettier": "2.7.1",
+    "react-test-renderer": "^18.2.0",
     "typescript": "^4.7.4"
   }
 }

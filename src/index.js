@@ -7,6 +7,7 @@ import Card from "./components/Card/Card";
 import SpellsContainer from "../src/components/Spells/SpellsConainter";
 import { SpellsDetailsContainer } from "./components/SpellsDetails/SpellsDetailsContainer";
 import SavedSpellsContainer from "./components/SavedSpells/SavedSpellsContainer";
+ 
 
 
 class App extends React.Component {
