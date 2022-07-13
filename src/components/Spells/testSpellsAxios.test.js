@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { BASE_URL, fetchSpells } from "../../axiosSpell/SpellsAxios";
+import { BASE_URL, fetchSpells } from "./SpellsAxios";
 
 jest.mock("axios");
 
@@ -32,17 +32,30 @@ describe("fetchUsers", () => {
   });
 
   describe("when API call fails", () => {
-    it("should return empty users list", async () => {
+    it("Should reject with an error when API call fails", async () => {
       // given
-      const message = "Network Error";
-      axios.get.mockRejectedValueOnce(new Error(message));
-
-      // when
-      const result = await fetchSpells();
-
-      // then
-      expect(axios.get).toHaveBeenCalledWith(`${BASE_URL}/spells/`);
-      expect(result).toEqual([]);
+      const err = "Network Error";
+      axios.get.mockRejectedValueOnce(new Error(err));
+      try {
+        await fetchSpells();
+      } catch (e) {
+        expect(e).toEqual(err);
+      }
     });
+  });
+});
+
+describe("when API call fails", () => {
+  it("should return empty", async () => {
+    // given
+    const message = "Network Error";
+    axios.get.mockRejectedValueOnce(new Error(message));
+
+    // when
+    const result = await fetchSpells();
+
+    // then
+    expect(axios.get).toHaveBeenCalledWith(`${BASE_URL}/spells/`);
+    expect(result).toEqual([]);
   });
 });

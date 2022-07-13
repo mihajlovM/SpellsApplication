@@ -25,15 +25,12 @@ describe("fetchUsers", () => {
       // when
       const result = await fetchSpells();
 
-      console.log(result);
-
       // then
       expect(axios.get).toHaveBeenCalledWith(`${BASE_URL}/spells`);
       expect(result).toEqual(spells);
     });
   });
 
- 
   describe("when API call fails", () => {
     it("should return empty users list", async () => {
       // given
