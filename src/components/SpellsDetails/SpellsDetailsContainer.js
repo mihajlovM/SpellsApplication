@@ -4,8 +4,12 @@ import SpellsDetails from "./SpellsDetails";
 import axios from "axios";
 import { BASE_URL } from "../../url/baseUrl";
 
+ 
+
 export function SpellsDetailsContainer() {
   const [spell, setSpell] = useState(null);
+
+  
 
   const { index } = useParams();
    
