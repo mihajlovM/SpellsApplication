@@ -1,4 +1,6 @@
 import axios from "axios";
+import { getFromFavorites } from "../../utils/storage";
+
 
 export const BASE_URL = "https://www.dnd5eapi.co/api";
 
