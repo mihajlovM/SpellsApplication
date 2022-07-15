@@ -15,11 +15,9 @@ export const fetchSpells = async () => {
     /**
      * Not a reliable endpoint and therefore Promise.all was used parallelization of requests.
      * To explain why the endpoint with multiple query params was not used ↑ was a workaround
-     */   
-    console.log(arr)
-
+     */
+     
     return await Promise.all(arr);
-
   } catch (e) {
     return [];
   }
